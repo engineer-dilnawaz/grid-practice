@@ -1,54 +1,40 @@
+html {
+  height: 100%;
+}
+
 body {
-  margin: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.container {
-  border: 2px solid;
-  background-color: #ddd;
   display: grid;
-  grid-template-columns: 200px 300px 1fr 200px;
-  grid-template-rows: 10% 1fr 10%;
-  padding: 10px;
-  /* gap: 20px; */
-  column-gap: 10px;
-  row-gap: 20px;
-  height: 400px;
+  margin: 20px;
+  height: 100%;
+  grid-template-columns: [col-1-start]1fr [col-1-end col-2-start]3fr [col-2-end];
+  grid-template-rows: 4.5rem auto 4.5rem;
 }
 
-.header {
-  background-color: #333;
-  grid-column-start: 1;
-  grid-column-end: -1;
+header {
+  background-color: blue;
   color: white;
-  text-align: center;
-  align-content: center;
+  grid-column-start: col-1-start;
+  grid-column-end: col-2-end;
 }
 
-.sidebar {
-  background-color: #333;
+main {
+  background-color: red;
   color: white;
-  align-content: center;
-  text-align: center;
+  grid-column-start: col-2-start;
+  grid-column-end: span 1;
 }
 
-.main-content {
-  background-color: #333;
-  grid-column-start: 2;
-  grid-column-end: -1;
+aside {
+  background-color: green;
   color: white;
-  align-content: center;
-  text-align: center;
+  grid-column-start: col-1-start;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
-.footer {
-  background-color: #333;
-  grid-column-start: 1;
-  grid-column-end: -1;
+footer {
+  background-color: orange;
   color: white;
-  align-content: center;
-  text-align: center;
+  grid-column-start: col-1-start;
+  grid-column-end: col-2-end;
 }
